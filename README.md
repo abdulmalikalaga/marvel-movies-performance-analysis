@@ -278,6 +278,10 @@ The final result is a polished, interactive Power BI dashboard demonstrating str
 - Visual storytelling
 - Dashboard UI/UX principles
 
+# 📁 PBIX File
+
+[Download the Power BI Dashboard](https://github.com/abdulmalikalaga/marvel-movies-performance-data-analysis/blob/main/pbix/marvel%20movies%20performance.pbix)
+
 ---
 
 ⭐ **If you found this project insightful, please star ⭐ this repository!**  
