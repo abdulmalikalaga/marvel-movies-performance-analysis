@@ -1,4 +1,4 @@
-# 📊 Marvel Movie Data Analytics Power BI Dashboard
+# 📊 Marvel Movies Performance Analysis Power BI Dashboard
 
 # 🧠 Project Overview
 
