@@ -46,6 +46,25 @@ The combined datasets included:
 - MCU phases
 - Studios (Disney, Fox, Sony)
 
+## Preparation in Power BI / Power Query
+
+### Key data preparation steps:
+- Standardised column names across all datasets
+- Cleaned inconsistent movie titles
+- Removed duplicates
+- Changed all currency columns to numeric types
+- Built a single `Movie ID` key to avoid issues from spelling variations
+- Performed multiple left-joins using Power Query merge
+- Created calculated columns using M language
+
+### Example M Transformation
+```m
+= if [Movie ID] = 69 and [International Box Office] = null 
+  then [Worldwide Box Office] - [Domestic Box Office] 
+  else [International Box Office]
+```
+<img width="774" height="495" alt="m transformation" src="https://github.com/user-attachments/assets/ec36e2ae-c8bf-4658-ac50-260aea3d0924" />
+
 ---
 
 # 🧮 Data Modelling
@@ -66,6 +85,8 @@ A clean **star schema** was built.
 - `MovieID` (DimMovies → FactTables)
 - `UniverseID` (DimUniverse → DimMovies)
 - `DateID` (DimDate → DimMovies or FactBoxOffice)
+
+<img width="1436" height="808" alt="data model screenshot" src="https://github.com/user-attachments/assets/a82d9b66-ea18-46cf-964a-cba0c96437e6" />
 
 ## 📏  Some Added Measures
 
@@ -106,29 +127,11 @@ IF(
     [Total Worldwide Box Office]
 )
 ```
-## Preparation in Power BI / Power Query
-
-### Key data preparation steps:
-- Standardised column names across all datasets
-- Cleaned inconsistent movie titles
-- Removed duplicates
-- Changed all currency columns to numeric types
-- Built a single `Movie ID` key to avoid issues from spelling variations
-- Performed multiple left-joins using Power Query merge
-- Created calculated columns using M language
-
-### Example M Transformation
-```m
-= if [Movie ID] = 69 and [International Box Office] = null 
-  then [Worldwide Box Office] - [Domestic Box Office] 
-  else [International Box Office]
-```
-
 ### Additional Transformations
 - Built the Universe dimension table (MCU vs Non-MCU) using conditional logic
 - Fixed relationship issues that caused identical average IMDb scores in both universes
 
-## Important Fix
+### ⚠️ Important Fix ⚠️
 Initially, MCU and Non-MCU showed the same IMDb average due to a relationship misalignment.  
 
 Correcting the `DimUniverse → DimMovies` and `DimMovies → FactRatings` relationships resolved the issue.
