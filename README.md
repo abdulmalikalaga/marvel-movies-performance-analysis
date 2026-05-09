@@ -184,6 +184,10 @@ To create an interactive analytic suite enabling:
 - Universe comparison of average ratings
 - Searchable movie matrix for critic vs audience alignment
 
+## 🖼️ Dashboard Preview:
+
+<img width="1436" height="808" alt="marvel dashboard viz" src="https://github.com/user-attachments/assets/9aa2ae72-c4bf-4ac5-acac-23403b0cd4f1" />
+
 ---
 
 ## Interactivity
